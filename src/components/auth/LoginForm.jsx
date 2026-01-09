@@ -30,19 +30,23 @@ export default function LoginForm() {
 
       {/* SIGN IN */}
       <Button
-        fullWidth
-        size="large"
-        sx={{
-          bgcolor: "#FFF1A8",
-          color: "#0A1F44",
-          py: 1.5,
-          fontWeight: "bold",
-          "&:hover": { bgcolor: "#FFE066" },
-        }}
-        onClick={() => navigate("/dashboard")}
-      >
-        SIGN IN
-      </Button>
+  fullWidth
+  size="large"
+  sx={{
+    bgcolor: "#FFF1A8",
+    color: "#0A1F44",
+    py: 1.5,
+    fontWeight: "bold",
+    "&:hover": { bgcolor: "#FFE066" },
+  }}
+  onClick={() => {
+    // Token fake (luego vendrá del backend)
+    localStorage.setItem("token", "fake-jwt-token");
+    navigate("/dashboard");
+  }}
+>
+  SIGN IN
+</Button>
 
       <Grid container spacing={2} mt={3}>
         {/* ACCOUNT LOCKED */}

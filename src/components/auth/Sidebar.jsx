@@ -1,18 +1,30 @@
-import { Box, Button, Divider } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Box, Button, Divider, Typography } from "@mui/material";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Sidebar() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   const navButton = (label, path) => (
     <Button
       fullWidth
+      onClick={() => navigate(path)}
       sx={{
         justifyContent: "flex-start",
+        py: 1.4,
+        px: 2,
+        mb: 0.5,
+        textTransform: "none",
+        fontWeight: isActive(path) ? "bold" : "normal",
+        bgcolor: isActive(path) ? "#E3F2FD" : "transparent",
         color: "#0A1F44",
-        py: 1.5,
+        borderRadius: 1,
+        "&:hover": {
+          bgcolor: "#E3F2FD",
+        },
       }}
-      onClick={() => navigate(path)}
     >
       {label}
     </Button>
@@ -34,9 +46,9 @@ export default function Sidebar() {
     >
       {/* TOP */}
       <Box>
-        <Box fontWeight="bold" fontSize={20} mb={3}>
+        <Typography fontWeight="bold" fontSize={20} mb={3} color="#0A1F44">
           FIN-UCE
-        </Box>
+        </Typography>
 
         {navButton("Dashboard", "/dashboard")}
         {navButton("Send Money", "/dashboard/send")}
@@ -46,9 +58,30 @@ export default function Sidebar() {
 
       {/* BOTTOM */}
       <Box>
-        <Divider />
+        <Divider sx={{ my: 2 }} />
+
         {navButton("Configuration", "/dashboard/config")}
-        {navButton("Log out", "/")}
+
+        <Button
+          fullWidth
+          sx={{
+            justifyContent: "flex-start",
+            py: 1.4,
+            px: 2,
+            mt: 1,
+            textTransform: "none",
+            color: "#B71C1C",
+            "&:hover": {
+              bgcolor: "#FDECEA",
+            },
+          }}
+          onClick={() => {
+            localStorage.removeItem("token");
+            navigate("/");
+          }}
+        >
+          Log out
+        </Button>
       </Box>
     </Box>
   );

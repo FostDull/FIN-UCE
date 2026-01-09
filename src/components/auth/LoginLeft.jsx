@@ -24,10 +24,6 @@ export default function LoginLeft() {
 
       {/* Main text */}
       <Box>
-        <Typography variant="h4" fontFamily="serif" color="#0A1F44" mb={4}>
-          Verify in your browser that you are on FinUCE.
-        </Typography>
-
         <Stack
           direction="row"
           spacing={2}

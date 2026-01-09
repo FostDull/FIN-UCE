@@ -37,12 +37,11 @@ export default function LoginForm() {
           color: "#0A1F44",
           py: 1.5,
           fontWeight: "bold",
-          "&:hover": {
-            bgcolor: "#FFE066",
-          },
+          "&:hover": { bgcolor: "#FFE066" },
         }}
+        onClick={() => navigate("/dashboard")}
       >
-        Sign in
+        SIGN IN
       </Button>
 
       <Grid container spacing={2} mt={3}>

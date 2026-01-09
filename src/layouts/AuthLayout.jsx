@@ -36,7 +36,7 @@ export default function AuthLayout({ formType = "login" }) {
               mb: 3,
             }}
           >
-            Verify in your browser that you are on Web Banking.
+            Verify in your browser that you are on FinUCE.
           </Box>
 
           <Box

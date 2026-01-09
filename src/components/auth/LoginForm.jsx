@@ -1,8 +1,11 @@
 import { Typography, TextField, Button, Link, Grid, Box } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Typography variant="h5" fontFamily="serif" color="#0A1F44" mb={4}>
@@ -12,7 +15,7 @@ export default function LoginForm() {
       <TextField label="Username" fullWidth margin="normal" />
 
       <Box textAlign="right">
-        <Link href="#" underline="none" fontSize={14}>
+        <Link underline="none" fontSize={14}>
           Forgot your username?
         </Link>
       </Box>
@@ -20,11 +23,12 @@ export default function LoginForm() {
       <TextField label="Password" type="password" fullWidth margin="normal" />
 
       <Box textAlign="right" mb={3}>
-        <Link href="#" underline="none" fontSize={14}>
+        <Link underline="none" fontSize={14}>
           Forgot your password?
         </Link>
       </Box>
 
+      {/* SIGN IN */}
       <Button
         fullWidth
         size="large"
@@ -42,6 +46,7 @@ export default function LoginForm() {
       </Button>
 
       <Grid container spacing={2} mt={3}>
+        {/* ACCOUNT LOCKED */}
         <Grid item xs={6}>
           <Button variant="outlined" fullWidth sx={{ py: 2 }}>
             <LockOutlinedIcon />
@@ -54,8 +59,14 @@ export default function LoginForm() {
           </Button>
         </Grid>
 
+        {/* NEW USER → REGISTER */}
         <Grid item xs={6}>
-          <Button variant="outlined" fullWidth sx={{ py: 2 }}>
+          <Button
+            variant="outlined"
+            fullWidth
+            sx={{ py: 2 }}
+            onClick={() => navigate("/register")}
+          >
             <PersonOutlineIcon />
             <Box ml={1} textAlign="left">
               <Typography fontWeight="bold" fontSize={14}>

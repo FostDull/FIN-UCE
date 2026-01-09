@@ -5,12 +5,13 @@ export default function LoginLeft() {
   return (
     <Box
       sx={{
-        height: "100%",
-        p: 6,
-        display: { xs: "none", lg: "flex" },
+        flex: 1,
+        bgcolor: "#FFFFFF",
+        px: 6,
+        py: 4,
+        display: { xs: "none", md: "flex" },
         flexDirection: "column",
         justifyContent: "space-between",
-        bgcolor: "white",
       }}
     >
       {/* Logo */}

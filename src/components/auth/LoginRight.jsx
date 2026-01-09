@@ -5,18 +5,19 @@ export default function LoginRight() {
   return (
     <Box
       sx={{
-        height: "100%",
-        bgcolor: "#F4F6F8",
+        flex: 1,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        bgcolor: "#F4F6F8",
       }}
     >
       <Paper
         elevation={3}
         sx={{
-          width: 420,
-          p: 5,
+          width: "100%",
+          maxWidth: 420,
+          p: 4,
           borderRadius: 3,
         }}
       >

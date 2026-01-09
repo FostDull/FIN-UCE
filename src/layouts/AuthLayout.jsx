@@ -11,14 +11,14 @@ export default function AuthLayout({ formType = "login" }) {
         display: "flex",
       }}
     >
-      {/* LEFT */}
+      {/* LEFT - OCULTA EN MOBILE */}
       <Box
         sx={{
           width: "50%",
           bgcolor: "#FFFFFF",
           px: 8,
           py: 6,
-          display: "flex",
+          display: { xs: "none", md: "flex" }, // 👈 CLAVE
           flexDirection: "column",
           justifyContent: "space-between",
         }}
@@ -69,14 +69,15 @@ export default function AuthLayout({ formType = "login" }) {
         </Box>
       </Box>
 
-      {/* RIGHT */}
+      {/* RIGHT - 100% EN MOBILE */}
       <Box
         sx={{
-          width: "50%",
+          width: { xs: "100%", md: "50%" }, // 👈 CLAVE
           bgcolor: "#F4F6F8",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          p: { xs: 2, md: 0 },
         }}
       >
         <Paper

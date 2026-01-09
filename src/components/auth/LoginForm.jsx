@@ -9,7 +9,7 @@ export default function LoginForm() {
   return (
     <>
       <Typography variant="h5" fontFamily="serif" color="#0A1F44" mb={4}>
-        Welcome to your Web Banking
+        Welcome to your FinUCE
       </Typography>
 
       <TextField label="Username" fullWidth margin="normal" />

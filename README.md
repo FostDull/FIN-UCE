@@ -14,3 +14,32 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+React Router (rutas privadas)
+´´´´´
+npm install react-router-dom
+´´´´´
+
+Axios (peticiones HTTP)
+´´´´
+npm install axios
+´´´´
+JWT Decode (leer el token)
+´´´´
+npm install jwt-decode
+´´´´
+React Hook Form (formularios pro)
+´´´´
+npm install react-hook-form
+´´´´
+Zod (validaciones)
+´´´´
+npm install zod
+´´´´
+
+
+npm install react-router-dom axios
+
+
+npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
+
